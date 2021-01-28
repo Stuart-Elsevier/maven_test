@@ -37,7 +37,7 @@ public class App
         // Open the document.
         Document doc = new Document();
         DocumentBuilder builder = new DocumentBuilder(doc);
-        builder.writeln("Hello World!, This is Stuart");
+        builder.writeln("Hello World!, This is Stuart, what is your NAME?");
         doc.save(dataDir + "HelloWorld_out_.docx");
         System.out.println("New Word document created successfully.");
         //Paragraph para = new Paragraph(doc);
