@@ -83,10 +83,29 @@ public class manipulate_doc {
     
         //new manipulate_doc().run(submissionFilePath, outputDirectoryPath);
 
-        String dataDir = getDataDir(manipulate_doc.class);
-        Document doc = new Document(dataDir);
-        System.out.println("This is the dataDir" + dataDir);
 
+
+        // Reads the document at location: /Users/smiths/development/java_code/Maven_test/src/main/resources/com/mycompany/app/manipulate_doc/
+        String dataDir = getDataDir(manipulate_doc.class);
+        Document doc = new Document(dataDir + "Revised manuscript with no changes marked.docx");
+        System.out.println("This is the dataDir" + doc);
+
+
+/*
+        //ExStart:
+        // The path to the documents directory.
+        String dataDir = Utils.getDataDir(AppendDocuments.class);
+
+        // Load the destination and source documents from disk.
+        Document dstDoc = new Document(dataDir + "TestFile.Destination.doc");
+        Document srcDoc = new Document(dataDir + "TestFile.Source.doc");
+        // Append the source document to the destination document while keeping the original formatting of the source document.
+        dstDoc.appendDocument(srcDoc, ImportFormatMode.KEEP_SOURCE_FORMATTING);
+        dstDoc.save(dataDir + "TestFile Out.docx");
+        //ExEnd:
+
+        System.out.println("Documents appended successfully.");
+*/
         // Open the document.
         
         //DocumentBuilder builder = new DocumentBuilder(doc);
