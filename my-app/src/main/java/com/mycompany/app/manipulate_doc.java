@@ -68,9 +68,10 @@ public class manipulate_doc {
 
 
 */
-    public static void recurseAllNodes(String dataDir) throws Exception {
+    public static void recurseAllNodes(Document doc) throws Exception {
         // Open a document
-        Document doc = new Document(dataDir + "Node.RecurseAllNodes.doc");
+        // ORIGINAL - Replaced WITH THE BELOW - Document doc = new Document(dataDir + "Node.RecurseAllNodes.doc");
+        //Document doc = new Document(dataDir + "Revised manuscript with no changes marked.docx");
         // Invoke the recursive function that will walk the tree.
         traverseAllNodes(doc);
     }
@@ -108,16 +109,21 @@ public class manipulate_doc {
 
         NodeCollection children = paragraph.getChildNodes();
         for (Node child : (Iterable<Node>) children) {
+            
         // Paragraph may contain children of various types such as runs, shapes and so on.
         if (child.getNodeType() == NodeType.RUN) {
+
         // Say we found the node that we want, do something useful.
             Run run = (Run) child;
             System.out.println(run.getText());
             }
         }
-        String dataDir2 = Utils.getSharedDataDir(NodeCollection.class) + "DocumentObjectModel/";
-        recurseAllNodes(dataDir2);
-   
+        //String dataDir2 = Utils.getSharedDataDir(manipulate_doc.class);
+        recurseAllNodes(doc);
+        //recurseAllNodes(dataDir);
+        //traverseAllNodes(dataDir2);
+
+
 
     }
     
